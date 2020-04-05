@@ -1,0 +1,9 @@
+---
+name: "Archlinux MAKEPKG action"
+description: "Builds PKGBUILD definition"
+branding:
+  icon: package
+  color: blue
+runs:
+  using: docker
+  image: docker.pkg.github.com/mijailr/arch-makepkg-action/makepkg:1.0.0
