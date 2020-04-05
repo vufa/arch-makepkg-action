@@ -1,4 +1,4 @@
-iname: Build docker
+name: Build docker
 
 on:
   release:
