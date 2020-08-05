@@ -6,4 +6,4 @@ branding:
   color: blue
 runs:
   using: docker
-  image: docker://mijailr/makepkg:1.0.0
+  image: docker://mijailr/makepkg:1.0.1

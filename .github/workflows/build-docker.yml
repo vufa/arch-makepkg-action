@@ -9,17 +9,20 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE: docker.pkg.github.com/mijailr/arch-makepkg-action/makepkg
-      DOCKERHUB_IMAGE: hub.docker.com/mijailr/makepkg
+      DOCKERHUB_IMAGE: mijailr/makepkg
     steps:
     - name: Checkout repository
       uses: actions/checkout@v1
     - name: Login docker registry
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
       run: |
+        docker login -u mijailr -p $DOCKER_TOKEN
         docker login docker.pkg.github.com -u $GITHUB_ACTOR -p $GITHUB_TOKEN
     - name: Build docker image
-      run: docker build . -t $IMAGE:${GITHUB_REF:10}
+      run: docker build . -t $IMAGE:${GITHUB_REF:10} -t $DOCKERHUB_IMAGE:${GITHUB_REF:10}
     - name: Push docker image
       run: |
         docker push $IMAGE:${GITHUB_REF:10}
+        docker push $DOCKERHUB_IMAGE:${GITHUB_REF:10}
