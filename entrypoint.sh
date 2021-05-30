@@ -11,6 +11,6 @@ for pkg in $INPUT_PACKAGES; do
 done
 
 for script in $INPUT_SCRIPTS; do
-    echo "\$ $script"
-    eval "$script" || exit $?
+    echo $script
+    eval $script || exit $?
 done
