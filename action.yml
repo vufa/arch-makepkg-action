@@ -10,6 +10,8 @@ inputs:
         A string with a space separated list of aur packages that should
         be built and included in the repository.
     required: true
+  scripts:
+    required: true
 runs:
   using: docker
   image: docker://countstarlight/makepkg:latest
