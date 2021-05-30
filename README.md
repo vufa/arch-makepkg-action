@@ -12,8 +12,7 @@ steps:
     packages: >
       p7zip
       wine
-    scripts: >
-      "makepkg"
+    scripts: "makepkg"
 ```
 
 Then you can upload the artifact with your package name and version specified
