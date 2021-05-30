@@ -11,7 +11,7 @@ for pkg in $INPUT_PACKAGES; do
 done
 
 for script in $INPUT_SCRIPTS; do
-    $script = `echo $script | xargs`
+    $script = `echo $script | tr -d \"`
     echo $script
     eval $script || exit $?
 done
