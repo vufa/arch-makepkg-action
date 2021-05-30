@@ -8,8 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE: docker.pkg.github.com/mijailr/arch-makepkg-action/makepkg
-      DOCKERHUB_IMAGE: mijailr/makepkg
+      IMAGE: docker.pkg.github.com/countstarlight/arch-makepkg-action/makepkg
+      DOCKERHUB_IMAGE: countstarlight/makepkg
     steps:
     - name: Checkout repository
       uses: actions/checkout@v1
@@ -18,7 +18,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
       run: |
-        docker login -u mijailr -p $DOCKER_TOKEN
+        docker login -u countstarlight -p $DOCKER_TOKEN
         docker login docker.pkg.github.com -u $GITHUB_ACTOR -p $GITHUB_TOKEN
     - name: Build docker image
       run: docker build . -t $IMAGE:${GITHUB_REF:10} -t $DOCKERHUB_IMAGE:${GITHUB_REF:10}
