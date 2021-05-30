@@ -4,6 +4,12 @@ description: "Builds PKGBUILD definition"
 branding:
   icon: package
   color: blue
+inputs:
+  packages:
+    description: >
+        A string with a space separated list of aur packages that should
+        be built and included in the repository.
+    required: true
 runs:
   using: docker
   image: docker://countstarlight/makepkg:latest
