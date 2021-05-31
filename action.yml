@@ -1,6 +1,6 @@
 ---
-name: "Archlinux MAKEPKG action"
-description: "Builds PKGBUILD definition"
+name: "Build Archlinux package"
+description: "Build Archlinux package"
 branding:
   icon: package
   color: blue
