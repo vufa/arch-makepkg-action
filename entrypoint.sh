@@ -14,6 +14,10 @@ done
 # update repos
 sudo pacman -Syy
 
+if [ ! -z "$INPUT_BEFORE" ]; then
+    eval $INPUT_BEFORE || exit $?
+fi
+
 sudo pacman -Syu --noconfirm
 
 for pkg in $INPUT_PACKAGES; do

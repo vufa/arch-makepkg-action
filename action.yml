@@ -7,7 +7,11 @@ branding:
 inputs:
   repos:
     description: >
-         A list of custom repositories.
+        A list of custom repositories.
+    required: false
+  before:
+    description: >
+        scripts before install packages.
     required: false
   packages:
     description: >

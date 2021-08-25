@@ -23,6 +23,7 @@ steps:
   with:
     repos: >
       exampleRepo=http://example.org/repos/$repo/$arch
+    before: "echo hello"
     packages: >
       p7zip
       wine
