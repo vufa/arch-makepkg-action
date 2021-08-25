@@ -21,6 +21,8 @@ steps:
 - name: Build archlinux package
   uses: countstarlight/arch-makepkg-action@master
   with:
+    repos: >
+      exampleRepo=http://example.org/repos/$repo/$arch
     packages: >
       p7zip
       wine

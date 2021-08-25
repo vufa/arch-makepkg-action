@@ -5,6 +5,10 @@ branding:
   icon: package
   color: blue
 inputs:
+  repos:
+    description: >
+         A list of custom repositories.
+    required: false
   packages:
     description: >
         A string with a space separated list of aur packages that should
