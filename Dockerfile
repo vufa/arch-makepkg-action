@@ -1,5 +1,5 @@
 FROM archlinux/archlinux:base-devel
-MAINTAINER Codist <countstarlight@gmail.com>
+MAINTAINER Vufa <countstarlight@gmail.com>
 
 ENV UGID='2000' UGNAME='build'
 
